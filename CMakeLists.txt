@@ -20,7 +20,7 @@ add_library(
   src/ast_and_node.cc
   src/ast_or_node.cc
   src/ast_not_node.cc
-  )
+  src/ast_logic_node.h src/ast_logic_node.cc)
 
 target_link_libraries(
   test_parser

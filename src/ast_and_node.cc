@@ -8,9 +8,13 @@ namespace query_rewriter {
 namespace query_parser {
 
 AstAndNode::AstAndNode(AstNode *left, AstNode *right)
-    : AstNode("AND") {
+    : AstLogicNode(AND) {
   AddChild(left);
   AddChild(right);
+}
+
+void AstAndNode::Print() const {
+
 }
 
 }  // namespace query_parser

@@ -17,6 +17,8 @@ class AstPhraseNode
 
   const std::string &GetPhrase() const;
 
+  virtual void Print() const;
+
  private:
   const std::string phrase_;
 };

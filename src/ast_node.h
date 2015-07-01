@@ -15,21 +15,23 @@ namespace query_parser {
 
 class AstNode {
  public:
-  AstNode(const std::string &name);
+  enum Type {
+    AND,
+    OR,
+    NOT,
+    PHRASE
+  };
+
+  AstNode(const Type &type);
 
   virtual ~AstNode();
 
-  size_t GetChildrenCount() const;
+  const Type GetType() const;
 
-  void AddChild(AstNode *node);
-
-  const std::string &GetName() const;
-
-  void Print() const;
+  virtual void Print() const = 0;
 
  private:
-  const std::string name_;
-  std::vector<AstNode *> children_;
+  const Type type_;
 };
 
 }  // namespace query_parser

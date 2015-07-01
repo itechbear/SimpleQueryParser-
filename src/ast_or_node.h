@@ -5,15 +5,17 @@
 #ifndef FLEX_BISON_CPP_AST_OR_NODE_H_
 #define FLEX_BISON_CPP_AST_OR_NODE_H_
 
-#include "ast_node.h"
+#include "ast_logic_node.h"
 
 namespace query_rewriter {
 namespace query_parser {
 
 class AstOrNode
-    : public AstNode {
+    : public AstLogicNode {
  public:
   AstOrNode(AstNode *left, AstNode *right);
+
+  void Print() const;
 };
 
 }  // namespace query_parser
