@@ -17,7 +17,7 @@ class AstNode {
  public:
   AstNode(const std::string &name);
 
-  ~AstNode();
+  virtual ~AstNode();
 
   size_t GetChildrenCount() const;
 
