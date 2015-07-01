@@ -79,5 +79,5 @@ or_logic : OR expression           { $$ = $2; }
 
 void query_rewriter::query_parser::Parser::error(const Parser::location_type& l,
                             const std::string& m) {
-    driver.error(l, m);
+    driver.PrintError(l, m);
 }

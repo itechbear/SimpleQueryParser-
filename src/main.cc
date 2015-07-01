@@ -15,7 +15,7 @@ int main(int argc, char *argv[]) {
       return 0;
     }
 
-    bool result = driver.parse_stream(infile, argv[ai]);
+    bool result = driver.ParseStream(infile, argv[ai]);
     //if (result) {
     //  std::cout << "Expressions:" << std::endl;
     //  for (unsigned int ei = 0; ei < calc.expressions.size(); ++ei) {

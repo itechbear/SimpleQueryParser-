@@ -1110,5 +1110,5 @@ namespace  query_rewriter { namespace query_parser  {
 
 void query_rewriter::query_parser::Parser::error(const Parser::location_type& l,
                             const std::string& m) {
-    driver.error(l, m);
+    driver.PrintError(l, m);
 }

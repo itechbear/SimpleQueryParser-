@@ -15,7 +15,7 @@ Driver::Driver()
       ast_node_(nullptr), query_lexer_(nullptr) {
 }
 
-bool Driver::parse_stream(std::istream &in, const std::string &sname) {
+bool Driver::ParseStream(std::istream &in, const std::string &sname) {
   streamname = sname;
 
   QueryLexer *query_lexer = new QueryLexer(&in);
@@ -27,23 +27,23 @@ bool Driver::parse_stream(std::istream &in, const std::string &sname) {
   return (parser.parse() == 0);
 }
 
-bool Driver::parse_file(const std::string &filename) {
+bool Driver::ParseFile(const std::string &filename) {
   std::ifstream in(filename.c_str());
   if (!in.good()) return false;
-  return parse_stream(in, filename);
+  return ParseStream(in, filename);
 }
 
-bool Driver::parse_string(const std::string &input, const std::string &sname) {
+bool Driver::ParseString(const std::string &input, const std::string &sname) {
   std::istringstream iss(input);
-  return parse_stream(iss, sname);
+  return ParseStream(iss, sname);
 }
 
-void Driver::error(const class location &l,
-                   const std::string &m) {
+void Driver::PrintError(const class location &l,
+                        const std::string &m) {
   std::cerr << l << ": " << m << std::endl;
 }
 
-void Driver::error(const std::string &m) {
+void Driver::PrintError(const std::string &m) {
   std::cerr << m << std::endl;
 }
 

@@ -18,3 +18,8 @@ Compile
  - $ cd build
  - $ cmake ..
  - $ make
+
+Credit
+======
+
+Most part of source code comes from [Flex Bison C++ Template/Example](https://panthema.net/2007/flex-bison-cpp-example/).

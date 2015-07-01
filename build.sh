@@ -8,5 +8,6 @@ flex -+ -o lexer.cc lexer.ll
 bison -L C++ -d parser.yy
 
 cd ${DIR}/.out
+cmake ..
 make
 cd ${DIR}
